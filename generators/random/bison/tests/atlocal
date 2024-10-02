@@ -1,0 +1,15 @@
+# tests/atlocal.  Generated from atlocal.in by configure.					-*- shell-script -*-
+# Configurable variable values for Bison test suite.
+# Copyright (C) 2000, 2001, 2002 Free Software Foundation, Inc.
+
+# We need a C compiler.
+CC='gcc'
+
+# We want no optimization.
+CFLAGS='-g -O2  '
+
+# We need `config.h'.
+CPPFLAGS="-DHAVE_CONFIG_H=1 -I$abs_top_builddir "
+
+# Is the compiler GCC?
+GCC='yes'

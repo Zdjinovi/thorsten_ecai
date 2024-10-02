@@ -1,0 +1,95 @@
+(define (domain prob_domain) 
+ (:requirements :strips :probabilistic-effects :conditional-effects) 
+ (:constants FX SX IJ OO EE AL RK RA DC ZN )
+ (:predicates 
+	 (YG ?X ) 
+	 (IQ ?X ) 
+	 (LD ?X ) 
+	 (CL ?X ) 
+(clear)
+(not-clear)
+ )
+(:action CXA
+ :parameters (?X ?Y )
+ :precondition (and 
+		 (YG ?Y) 
+		 (YG ?X) 
+		 (IQ ?X) 
+  )
+ :effect (probabilistic 
+		 54/100 (and (CL ?X) (not (IQ ?X)) (CL ?Y) (not (YG ?Y)) )  
+		 46/100 (and (not (YG ?Y)) (LD ?Y) )  
+          )
+ )
+(:action WFP
+ :parameters (?X ?Y ?Z )
+ :precondition (and 
+		 (LD ?Y) 
+		 (LD ?Z) 
+  )
+ :effect (probabilistic 
+		 69/100 (and (not (LD ?Y)) (not (LD ?Z)) )  
+		 19/100 (and (YG ?Y) (YG ?Z) (IQ ?X) )  
+		 12/100 (and (not (LD ?Y)) (not (LD ?Z)) (CL ?Y) )  
+          )
+ )
+(:action TMQ
+ :parameters (?X )
+ :precondition (and 
+		 (YG ?X) 
+		 (CL ?X) 
+  )
+ :effect (probabilistic 
+		 37/100 (and (not (CL ?X)) (not (YG ?X)) )  
+		 63/100 (and (not (CL ?X)) (IQ ?X) (not (YG ?X)) (LD ?X) )  
+          )
+ )
+(:action TBU
+ :parameters (?X ?Y ?Z )
+ :precondition (and 
+		 (LD ?Y) 
+		 (CL ?Y) 
+		 (YG ?X) 
+		 (IQ ?Y) 
+  )
+ :effect (probabilistic 
+		 100/100 (and (CL ?Z) (YG ?Y) )  
+          )
+ )
+(:action reset1 
+ :precondition (not-clear)
+ :effect (and 
+	     (forall (?x) (and 
+      (not (YG ?x)) 
+      (not (IQ ?x)) 
+      (not (LD ?x)) 
+      (not (CL ?x)) 
+))
+(not (not-clear))
+(clear)))
+
+(:action reset2 
+ :precondition (clear) 
+ :effect (and (not-clear)
+              (not (clear))
+(CL RK) 
+(IQ OO) 
+(LD RA) 
+(YG RK) 
+(IQ AL) 
+(CL DC) 
+(CL SX) 
+(LD AL) 
+(LD EE) 
+(CL AL) 
+(YG IJ) 
+(CL ZN) 
+(YG EE) 
+(YG DC) 
+(IQ SX) 
+(IQ IJ) 
+(YG AL) 
+(IQ EE) 
+(IQ RK) 
+(YG RA) 
+)))

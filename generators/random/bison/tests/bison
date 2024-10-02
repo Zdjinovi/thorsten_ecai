@@ -1,0 +1,8 @@
+#! /bin/sh
+# tests/bison.  Generated from bison.in by configure.
+# Wrapper around a non installed bison to make it work as an installed one.
+
+# We want to use the files shipped with Bison.
+BISON_PKGDATADIR='/mnt/data_server/kloessner/experiments/probfd/ppddl-benchmarks/probfd-generators/random/bison/data'
+export BISON_PKGDATADIR
+exec $PREBISON '/mnt/data_server/kloessner/experiments/probfd/ppddl-benchmarks/probfd-generators/random/bison/src/bison' ${1+"$@"}

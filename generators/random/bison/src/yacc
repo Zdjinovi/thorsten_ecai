@@ -1,0 +1,2 @@
+#! /bin/sh
+exec /mnt/data_server/kloessner/experiments/probfd/ppddl-benchmarks/ippc06/generators/random/FF-mod/bison-install/bin/bison -y "$@"

@@ -1,0 +1,16 @@
+(define (problem random-problem539) 
+ (:domain prob_domain) 
+ (:init 
+(not-clear)
+(FO UG UG) (FO PF QL) (CT MY DV) (CT UG DV) (FO QL VL) (CF UG) (QI SK PF) (QI QL SK) (QI SK MT) (FO HM HM) (CF DV) (QI UG PF) (FO HM SK) (FO VL QL)  
+)
+ (:goal (and 
+(CT DV  VL ) 
+(CT UG  QL ) 
+(CT UG  NA ) 
+(CT DV  MT ) 
+(CT UG  PF ) 
+(CT UG  MT ) 
+(CT VL  UG ) 
+))
+)

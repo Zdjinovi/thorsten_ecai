@@ -1,0 +1,7 @@
+(define (problem bw_8_p05)
+  (:domain blocks-domain)
+  (:objects b1 b2 b3 b4 b5 b6 b7 b8 - block)
+  (:init (emptyhand) (on-table b1) (on b2 b8) (on-table b3) (on b4 b7) (on b5 b4) (on b6 b5) (on b7 b3) (on b8 b6) (clear b1) (clear b2))
+  (:goal (and (emptyhand) (on b1 b6) (on-table b2) (on b3 b1) (on b4 b2) (on b5 b4) (on b6 b7) (on-table b7) (on b8 b5) (clear b3) (clear b8)))
+  (:metric minimize (total-cost))
+)

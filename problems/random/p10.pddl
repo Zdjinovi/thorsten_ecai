@@ -1,0 +1,16 @@
+(define (problem random-problem180) 
+ (:domain prob_domain) 
+ (:init 
+(not-clear)
+(TE ND ND) (LU BU) (FZ KR) (LU KR) (FZ WH) (TE ND SR) (FZ LL) (TE SR BU) (YM BU ND) (LU BH) (LU QL) (TE QL TB) (TE KR WZ) (LU ND) (TE LL ND) (YM KR WZ) (TE WH ND) (YM LL TB) (LU LL) (YM BU QL) (TE BH TB) (YM WZ QL) (YM BH BH) (YM WH KR) (TE BH BU) (YM BH WZ) (TE TB TB) (TE LL TB)  
+)
+ (:goal (and 
+(TE QL  QL ) 
+(TE SR  SR ) 
+(TE BU  BU ) 
+(TE BH  BH ) 
+(TE WH  WH ) 
+(TE KR  KR ) 
+(TE WZ  WZ ) 
+))
+)

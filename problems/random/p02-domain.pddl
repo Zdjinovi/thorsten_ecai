@@ -1,0 +1,96 @@
+(define (domain prob_domain) 
+ (:requirements :strips :probabilistic-effects :conditional-effects) 
+ (:constants HJ DS ST GL PR RG AP UE UQ YZ )
+ (:predicates 
+	 (DO ?X ?Y ) 
+	 (PG ?X ) 
+	 (BE ?X ) 
+(clear)
+(not-clear)
+ )
+(:action ZRN
+ :parameters (?X ?Y ?Z )
+ :precondition (and 
+		 (DO ?Y ?Y) 
+		 (BE ?Z) 
+		 (PG ?X) 
+  )
+ :effect (probabilistic 
+		 60/100 (and (BE ?X) (not (PG ?X)) (not (BE ?Z)) )  
+		 5/100 (and (not (PG ?X)) (BE ?Y) (not (DO ?Y ?Y)) )  
+		 35/100 (and (BE ?Y) )  
+          )
+ )
+(:action XBB
+ :parameters (?X ?Y )
+ :precondition (and 
+		 (BE ?X) 
+  )
+ :effect (probabilistic 
+		 34/100 (and (PG ?Y) (not (BE ?X)) )  
+		 61/100 (and (BE ?Y) )  
+		 3/100 (and (DO ?Y ?X) (BE ?Y) )  
+		 0/100 (and (not (BE ?X)) )  
+		 2/100 (and (PG ?Y) )  
+          )
+ )
+(:action BUP
+ :parameters (?X ?Y )
+ :precondition (and 
+		 (PG ?X) 
+		 (BE ?Y) 
+  )
+ :effect (probabilistic 
+		 31/100 (and (not (PG ?X)) )  
+		 52/100 (and (PG ?Y) (not (PG ?X)) )  
+		 17/100 (and (DO ?X ?X) (BE ?X) (not (PG ?X)) )  
+          )
+ )
+(:action PUV
+ :parameters (?X ?Y ?Z )
+ :precondition (and 
+		 (PG ?X) 
+  )
+ :effect (probabilistic 
+		 56/100 (and (PG ?Y) )  
+		 28/100 (and (not (PG ?X)) )  
+		 16/100 (and (BE ?Z) (not (PG ?X)) )  
+          )
+ )
+(:action reset1 
+ :precondition (not-clear)
+ :effect (and 
+	     (forall (?x) (and 
+      (not (DO ?x HJ)) 
+      (not (DO ?x DS)) 
+      (not (DO ?x ST)) 
+      (not (DO ?x GL)) 
+      (not (DO ?x PR)) 
+      (not (DO ?x RG)) 
+      (not (DO ?x AP)) 
+      (not (DO ?x UE)) 
+      (not (DO ?x UQ)) 
+      (not (DO ?x YZ)) 
+      (not (PG ?x)) 
+      (not (BE ?x)) 
+))
+(not (not-clear))
+(clear)))
+
+(:action reset2 
+ :precondition (clear) 
+ :effect (and (not-clear)
+              (not (clear))
+(PG GL) 
+(DO RG DS) 
+(PG DS) 
+(DO RG UQ) 
+(DO DS GL) 
+(DO HJ GL) 
+(BE ST) 
+(DO UQ UQ) 
+(PG AP) 
+(BE UQ) 
+(PG HJ) 
+(BE DS) 
+)))
